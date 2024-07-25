@@ -3,7 +3,9 @@ import React, { FormEvent, useState } from "react";
 import { BackgroundBeams } from "@/components/ui/background-beams";
 
 function page() {
+    // eslint-disable-next-line react-hooks/rules-of-hooks
     const [email,setEmail]=useState("")
+    // eslint-disable-next-line react-hooks/rules-of-hooks
     const [message,setMessage]=useState("")
     function handleSubmit(events:FormEvent<HTMLFormElement>){
         events.preventDefault();
@@ -20,7 +22,7 @@ function page() {
           programs, or events. Reach out and let us know how we can assist you
           in your musical journey.
         </p>
-        <form action="" className="space-y-4 mt-4">
+        <form onSubmit={handleSubmit} className="space-y-4 mt-4">
             <input type="email" 
             required
             placeholder="Your email address"
